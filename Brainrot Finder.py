@@ -5,8 +5,8 @@ import pyttsx3
 import re
 import win32gui, win32ui, win32con, win32api 
 import ctypes
-import pydirectinput # <--- NEW: For pressing keys in games
-import time          # <--- NEW: To count the seconds we hold E
+import pydirectinput 
+import time         
 from fuzzywuzzy import process
 from colorama import Fore, Style, init
 
@@ -18,12 +18,12 @@ engine = pyttsx3.init()
 engine.setProperty('rate', 150) 
 
 # --- CONFIGURATION ---
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe' # Update this path if necessary, Install Tesseract OCR from: https://github.com/AlexanderP/tesseract-appimage/releases
 
 # How long to hold 'E' to ensure the purchase happens
 BUY_HOLD_DURATION = 3.5 
 
-# The list of Brainrots you want to be alerted for
+# The list of Brainrots you want to be brought 
 RARE_BRAINROTS = [
     "Strawberry Elephant", "Dragon Cannelloni", "Spaghetti Tualetti",
     "Nuclearo Dinosauro", "Los Bros", "Chicleteira Bicicleteira",
@@ -39,7 +39,7 @@ COMMON_BRAINROTS = [
 # --- DIMENSIONS ---
 SCAN_BOX_WIDTH = 900
 SCAN_BOX_HEIGHT = 560
-# ------------------
+# The smaller the window or diemnsions are, the less accurate OCR will be.
 
 def process_image(img):
     """

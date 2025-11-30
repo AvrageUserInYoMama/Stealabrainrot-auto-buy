@@ -1,3 +1,4 @@
+# pip install opencv-python pytesseract pyttsx3 pydirectinput pywin32 fuzzywuzzy python-Levenshtein
 import cv2
 import numpy as np
 import pytesseract
@@ -180,3 +181,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
